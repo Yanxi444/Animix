@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Streaming</title>
+    <script>
+        function loadVideo() {
+            let videoFrame = document.getElementById("Animix");
+            let videoID = "1iicyq06rmCj82qJFfc5zpTeHHuJlQi7v";  // Replace with your file ID
+            videoFrame.src = "https://drive.google.com/file/d/" + videoID + "/preview";
+        }
+    </script>
+</head>
+<body onload="loadVideo()">
+    <iframe id="anime-video" width="640" height="360" allow="autoplay"></iframe>
+</body>
+</html>
