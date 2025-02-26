@@ -11,24 +11,30 @@ h1 {
     margin-top: 20px;
 }
 
-.anime-container {
-    padding: 20px;
-}
-
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+/* Scrollable Horizontal Anime List */
+.anime-scroll {
+    display: flex;
+    overflow-x: auto; /* Horizontal scrolling */
     gap: 20px;
     padding: 20px;
-    justify-items: center;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
 }
 
+/* Hide scrollbar */
+.anime-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Anime Box */
 .anime-box {
     background-color: #222;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
+    min-width: 160px; /* Fixed width for scrolling */
+    scroll-snap-align: center;
 }
 
 .anime-box:hover {
@@ -48,6 +54,7 @@ h1 {
     color: white;
 }
 
+/* Back Button */
 .btn {
     margin-top: 20px;
     padding: 10px 20px;
