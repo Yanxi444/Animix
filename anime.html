@@ -3,53 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Collection</title>
+    <title>Kushal Collection</title>
     <link rel="stylesheet" href="anime.css">
 </head>
 <body>
+
+    <!-- Futuristic Title -->
+    <h1>KUSHAL COLLECTION</h1>
+
+    <!-- Anime Collection Grid -->
     <div class="anime-container">
-        <h1>Anime Collection</h1>
-        <div class="anime-grid">
-            <div class="anime-box">
-                <img src="images/aot.jpg" alt="Attack on Titan">
-                <p>Attack on Titan</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/naruto.jpg" alt="Naruto">
-                <p>Naruto</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/onepiece.jpg" alt="One Piece">
-                <p>One Piece</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/demonslayer.jpg" alt="Demon Slayer">
-                <p>Demon Slayer</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/jujutsukaisen.jpg" alt="Jujutsu Kaisen">
-                <p>Jujutsu Kaisen</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/deathnote.jpg" alt="Death Note">
-                <p>Death Note</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/bleach.jpg" alt="Bleach">
-                <p>Bleach</p>
-            </div>
-            <div class="anime-box">
-                <img src="images/tokyorevengers.jpg" alt="Tokyo Revengers">
-                <p>Tokyo Revengers</p>
-            </div>
+        <div class="anime-box">
+            <img src="images/attack-on-titan.jpg" alt="Attack on Titan">
+            <p>Attack on Titan</p>
         </div>
-        <button id="backBtn" class="btn">⬅ Go Back</button>
+        <div class="anime-box">
+            <img src="images/naruto.jpg" alt="Naruto">
+            <p>Naruto</p>
+        </div>
+        <div class="anime-box">
+            <img src="images/one-piece.jpg" alt="One Piece">
+            <p>One Piece</p>
+        </div>
+        <div class="anime-box">
+            <img src="images/demon-slayer.jpg" alt="Demon Slayer">
+            <p>Demon Slayer</p>
+        </div>
+        <div class="anime-box">
+            <img src="images/jujutsu-kaisen.jpg" alt="Jujutsu Kaisen">
+            <p>Jujutsu Kaisen</p>
+        </div>
+        <div class="anime-box">
+            <img src="images/death-note.jpg" alt="Death Note">
+            <p>Death Note</p>
+        </div>
     </div>
 
+    <!-- Futuristic Back Button -->
+    <button class="back-button" onclick="goBack()">Back</button>
+
     <script>
-        document.getElementById("backBtn").addEventListener("click", function() {
-            window.location.href = "index.html";
-        });
+        function goBack() {
+            window.history.back();
+        }
     </script>
+
 </body>
 </html>
