@@ -1,144 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+/* General styles */
 body {
     font-family: 'Orbitron', sans-serif;
-    background: black;
-    color: white;
-    text-align: center;
+    background: black; /* Clean futuristic look */
+    color: cyan;
     margin: 0;
     padding: 0;
-}
-
-/* Background Animation - Moving Neon Boxes */
-@keyframes moveBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(0, 255, 255, 0.1),
-        rgba(0, 255, 255, 0.2) 10px,
-        transparent 10px,
-        transparent 20px
-    );
-    animation: moveBackground 5s linear infinite;
-    z-index: -1;
-}
-
-/* Title - Futuristic Glow */
-h1 {
-    font-size: 28px;
-    text-transform: uppercase;
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 20px blue;
-    animation: flicker 1.5s infinite alternate;
-}
-
-@keyframes flicker {
-    0% { opacity: 1; }
-    100% { opacity: 0.8; }
-}
-
-/* Anime Grid - Responsive Layout */
-.anime-container {
-    padding: 10px;
-}
-
-.anime-grid {
-    display: grid;
-    gap: 15px;
-    padding: 10px;
-    max-width: 90%;
-    margin: auto;
-}
-
-/* Default: 4 per row */
-.anime-grid {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-/* Tablet: 3 per row */
-@media (max-width: 768px) {
-    .anime-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Mobile: 2 per row */
-@media (max-width: 480px) {
-    .anime-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Anime Box - Futuristic Glow */
-.anime-box {
-    background: rgba(0, 255, 255, 0.1);
-    border: 2px solid cyan;
-    padding: 8px;
-    border-radius: 10px;
-    width: 100%;
-    aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+}
+
+/* Header styling */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: cyan;
+    margin-top: 20px;
+    text-shadow: 0px 0px 10px cyan;
+}
+
+/* Anime container */
+.anime-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ensures responsiveness */
+    gap: 10px;
+    max-width: 90%;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+/* Anime box */
+.anime-box {
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid cyan;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out, background 0.3s;
 }
 
 .anime-box:hover {
-    background: rgba(0, 255, 255, 0.3);
-    box-shadow: 0 0 10px cyan;
+    transform: scale(1.05);
+    background: rgba(0, 255, 255, 0.2);
 }
 
-/* Anime Logo */
+/* Anime logo */
 .anime-box img {
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
-.anime-box img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.5);
-}
-
-/* Anime Name - Glowing Text */
+/* Anime name */
 .anime-box p {
-    margin-top: 5px;
-    font-size: 12px;
+    margin: 5px 0 0;
+    font-size: 14px;
     font-weight: bold;
     color: cyan;
-    text-shadow: 0 0 5px cyan;
 }
 
-/* Futuristic Back Button */
-.btn {
+/* Back button */
+.back-button {
     margin-top: 20px;
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
-    color: cyan;
-    background: transparent;
-    border: 2px solid cyan;
+    color: black;
+    background: cyan;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s;
-    box-shadow: 0 0 10px cyan;
+    transition: background 0.3s, transform 0.2s;
 }
 
-.btn:hover {
-    background: cyan;
-    color: black;
-    box-shadow: 0 0 20px cyan;
+.back-button:hover {
+    background: white;
+    transform: scale(1.1);
 }
