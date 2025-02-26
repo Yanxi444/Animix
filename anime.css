@@ -11,45 +11,54 @@ h1 {
     margin-top: 20px;
 }
 
-/* Scrollable Horizontal Anime List */
-.anime-scroll {
+/* Anime Grid Layout */
+.anime-container {
     display: flex;
-    overflow-x: auto; /* Horizontal scrolling */
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
 }
 
-/* Hide scrollbar */
-.anime-scroll::-webkit-scrollbar {
-    display: none;
+/* Anime List - Grid with 4 items per row */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
-/* Anime Box */
+/* Anime Box - Square shape */
 .anime-box {
     background-color: #222;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    width: 150px;
+    height: 150px;
     transition: 0.3s;
-    min-width: 160px; /* Fixed width for scrolling */
-    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .anime-box:hover {
     background-color: #444;
 }
 
+/* Anime Logo (Square) */
 .anime-box img {
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
+/* Anime Name */
 .anime-box p {
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 5px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
 }
@@ -68,4 +77,11 @@ h1 {
 
 .btn:hover {
     background-color: darkblue;
+}
+
+/* Responsive: Adjust grid for smaller screens */
+@media (max-width: 600px) {
+    .anime-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row for smaller screens */
+    }
 }
