@@ -1,21 +1,21 @@
-/* Import futuristic font */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+/* General Styling */
 body {
-    font-family: 'Orbitron', sans-serif;
-    background-color: black;
-    color: cyan;
     margin: 0;
     padding: 0;
+    background: black;
+    color: cyan;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh; /* Ensures background fills full height */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
     position: relative;
 }
 
-/* Futuristic Background Grid */
+/* Moving Neon Background */
 body::before {
     content: "";
     position: absolute;
@@ -23,111 +23,71 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        90deg,
-        rgba(0, 255, 255, 0.1) 0px,
-        rgba(0, 255, 255, 0.1) 10px,
-        transparent 10px,
-        transparent 40px
-    ),
-    repeating-linear-gradient(
-        0deg,
-        rgba(0, 255, 255, 0.1) 0px,
-        rgba(0, 255, 255, 0.1) 10px,
-        transparent 10px,
-        transparent 40px
-    );
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 10%, transparent 70%);
+    animation: moveBackground 10s linear infinite;
     z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
 }
 
 /* Kushal Collection Title */
 h1 {
-    font-size: 28px;
-    text-align: center;
-    text-transform: uppercase;
+    font-size: 2rem;
     color: cyan;
+    text-shadow: 0px 0px 10px cyan, 0px 0px 20px blue;
     margin-top: 20px;
-    text-shadow: 0px 0px 10px cyan;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    border: 2px solid cyan;
-    border-radius: 10px;
-    background: rgba(0, 255, 255, 0.1);
 }
 
-/* Anime Container */
+/* Anime Grid */
 .anime-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 90%;
-    max-width: 600px;
-    margin-top: 20px; /* Added space below heading */
-    justify-content: center;
+    max-width: 400px;
+    margin-top: 20px;
 }
 
-/* Anime Box */
+/* Anime Boxes */
 .anime-box {
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 255, 255, 0.1);
     border: 2px solid cyan;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease-in-out, background 0.3s;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .anime-box:hover {
-    transform: scale(1.05);
-    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
-/* Anime Logo */
+/* Anime Images */
 .anime-box img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     border-radius: 5px;
-}
-
-/* Anime Name */
-.anime-box p {
-    margin: 5px 0 0;
-    font-size: 10px;
-    font-weight: bold;
-    color: cyan;
-    text-align: center;
 }
 
 /* Back Button */
 .back-button {
     margin-top: 20px;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
-    color: black;
-    background: linear-gradient(45deg, cyan, blue);
+    color: cyan;
+    background: transparent;
     border: 2px solid cyan;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-    align-self: center;
-    text-transform: uppercase;
-    text-shadow: 0px 0px 5px white;
+    text-shadow: 0px 0px 10px cyan;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
 
 .back-button:hover {
-    background: linear-gradient(45deg, blue, cyan);
+    background: cyan;
+    color: black;
     transform: scale(1.1);
-    box-shadow: 0px 0px 15px cyan;
-}
-
-/* Responsive Fix for Mobile */
-@media (max-width: 480px) {
-    .anime-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
