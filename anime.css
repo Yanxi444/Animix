@@ -1,16 +1,19 @@
-/* General Styles */
+/* Import futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
     font-family: 'Orbitron', sans-serif;
-    background: black; /* Clean futuristic look */
+    background-color: black; /* Removed stripes */
     color: cyan;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-/* Header Styling */
+/* Anime Collection Title */
 h1 {
     font-size: 28px;
     text-align: center;
@@ -24,7 +27,7 @@ h1 {
 /* Anime Container */
 .anime-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 boxes in a row */
+    grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
     gap: 10px;
     width: 90%;
     max-width: 1200px;
@@ -35,7 +38,7 @@ h1 {
 /* Anime Box */
 .anime-box {
     width: 100%;
-    height: 140px; /* Adjusted size for mobile */
+    height: 140px; /* Fixed size */
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid cyan;
     border-radius: 10px;
