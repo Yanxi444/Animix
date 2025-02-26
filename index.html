@@ -11,7 +11,40 @@
     <div class="container">
         <h1>Welcome to the World of Kushal</h1>
         <p>Step into a realm of endless entertainment, where the fun never stops.</p>
-        <a href="#" class="btn">Enter</a>
+        <button id="enterBtn" class="btn">Enter</button>
     </div>
+
+    <div id="animeList" class="anime-container" style="display: none;">
+        <!-- Anime list will be inserted here -->
+    </div>
+
+    <script>
+        // Anime Data (You can add more anime here)
+        const animeData = [
+            { title: "Solo Leveling", image: "https://via.placeholder.com/150", link: "#" },
+            { title: "Naruto", image: "https://via.placeholder.com/150", link: "#" },
+            { title: "One Piece", image: "https://via.placeholder.com/150", link: "#" },
+            { title: "Demon Slayer", image: "https://via.placeholder.com/150", link: "#" },
+            { title: "Jujutsu Kaisen", image: "https://via.placeholder.com/150", link: "#" }
+        ];
+
+        document.getElementById("enterBtn").addEventListener("click", function() {
+            document.querySelector(".container").style.display = "none"; // Hide welcome screen
+            const animeList = document.getElementById("animeList");
+            animeList.style.display = "grid"; // Show anime list
+
+            animeData.forEach(anime => {
+                const animeBox = document.createElement("div");
+                animeBox.classList.add("anime-box");
+                animeBox.innerHTML = `
+                    <a href="${anime.link}">
+                        <img src="${anime.image}" alt="${anime.title}">
+                        <p>${anime.title}</p>
+                    </a>
+                `;
+                animeList.appendChild(animeBox);
+            });
+        });
+    </script>
 </body>
 </html>
