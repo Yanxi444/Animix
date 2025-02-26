@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime List</title>
+    <title>Anime Collection</title>
     <link rel="stylesheet" href="anime.css">
 </head>
 <body>
     <div class="anime-container">
-        <h1>Anime Collection</h1>
+        <h1>⚡ Anime Collection ⚡</h1>
         <div class="anime-grid">
-            <!-- Anime Thumbnails (Using Local Images) -->
             <div class="anime-box">
-                <img src="images/sololeveling.jpg" alt="Solo Leveling">
-                <p>Solo Leveling</p>
+                <img src="images/aot.jpg" alt="Attack on Titan">
+                <p>Attack on Titan</p>
             </div>
             <div class="anime-box">
                 <img src="images/naruto.jpg" alt="Naruto">
@@ -44,11 +43,10 @@
                 <p>Tokyo Revengers</p>
             </div>
         </div>
-        <button id="backBtn" class="btn">Go Back</button>
+        <button id="backBtn" class="btn">⬅ Go Back</button>
     </div>
 
     <script>
-        // Redirect back to the main page when clicking "Go Back"
         document.getElementById("backBtn").addEventListener("click", function() {
             window.location.href = "index.html";
         });
