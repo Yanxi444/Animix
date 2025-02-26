@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World of Kushal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="grid-overlay"></div> <!-- Moving Neon Grid -->
@@ -14,36 +14,10 @@
         <button id="enterBtn" class="btn">Enter</button>
     </div>
 
-    <div id="animeList" class="anime-container" style="display: none;">
-        <!-- Anime list will be inserted here -->
-    </div>
-
     <script>
-        // Anime Data (You can add more anime here)
-        const animeData = [
-            { title: "Solo Leveling", image: "https://via.placeholder.com/150", link: "#" },
-            { title: "Naruto", image: "https://via.placeholder.com/150", link: "#" },
-            { title: "One Piece", image: "https://via.placeholder.com/150", link: "#" },
-            { title: "Demon Slayer", image: "https://via.placeholder.com/150", link: "#" },
-            { title: "Jujutsu Kaisen", image: "https://via.placeholder.com/150", link: "#" }
-        ];
-
+        // Redirect to anime page when clicking "Enter"
         document.getElementById("enterBtn").addEventListener("click", function() {
-            document.querySelector(".container").style.display = "none"; // Hide welcome screen
-            const animeList = document.getElementById("animeList");
-            animeList.style.display = "grid"; // Show anime list
-
-            animeData.forEach(anime => {
-                const animeBox = document.createElement("div");
-                animeBox.classList.add("anime-box");
-                animeBox.innerHTML = `
-                    <a href="${anime.link}">
-                        <img src="${anime.image}" alt="${anime.title}">
-                        <p>${anime.title}</p>
-                    </a>
-                `;
-                animeList.appendChild(animeBox);
-            });
+            window.location.href = "anime.html"; // Redirects to anime list page
         });
     </script>
 </body>
