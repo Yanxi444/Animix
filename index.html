@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Streaming</title>
+    <link rel="stylesheet" href="style.css">  <!-- Link CSS File -->
     <script>
         function loadVideo() {
-            let videoFrame = document.getElementById("anime-video");
+            let videoFrame = document.getElementById("Animix");
             let videoID = "1iicyq06rmCj82qJFfc5zpTeHHuJlQi7v";  // Replace with your Google Drive file ID
 
             if (videoID) {
@@ -17,9 +16,3 @@
         }
     </script>
 </head>
-<body onload="loadVideo()">
-    <h2>Watch Anime</h2>
-    <p id="loading-message">Loading video...</p>
-    <iframe id="anime-video" width="640" height="360" allow="autoplay; encrypted-media"></iframe>
-</body>
-</html>
