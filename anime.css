@@ -1,80 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
+    font-family: 'Orbitron', sans-serif;
+    background: black;
     color: white;
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
+/* Background Animation - Moving Neon Boxes */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.1),
+        rgba(0, 255, 255, 0.2) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    animation: moveBackground 5s linear infinite;
+    z-index: -1;
+}
+
+/* Title - Futuristic Glow */
 h1 {
-    margin-top: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px blue;
+    animation: flicker 1.5s infinite alternate;
 }
 
-/* Anime Container */
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* Anime Grid - 4 Per Row */
 .anime-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
 }
 
-/* Anime Grid (4 per row) */
 .anime-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
-    gap: 20px; /* Space between items */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     padding: 10px;
     max-width: 800px;
+    margin: auto;
 }
 
-/* Anime Box (Square, Small) */
+/* Anime Box - Futuristic Glow */
 .anime-box {
-    background-color: #222;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid cyan;
     padding: 10px;
     border-radius: 10px;
-    text-align: center;
     width: 150px;
     height: 150px;
-    transition: 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
 }
 
 .anime-box:hover {
-    background-color: #444;
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px cyan;
 }
 
-/* Anime Logo (Square) */
+/* Anime Logo - Neon Effect */
 .anime-box img {
     width: 100px;
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
+    transition: 0.3s;
 }
 
-/* Anime Name */
+.anime-box img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+/* Anime Name - Glowing Text */
 .anime-box p {
     margin-top: 5px;
     font-size: 12px;
     font-weight: bold;
-    color: white;
+    color: cyan;
+    text-shadow: 0 0 5px cyan;
 }
 
-/* Back Button */
+/* Futuristic Back Button */
 .btn {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 18px;
-    color: white;
-    background-color: blue;
-    border: none;
+    font-weight: bold;
+    color: cyan;
+    background: transparent;
+    border: 2px solid cyan;
     cursor: pointer;
+    text-transform: uppercase;
     transition: 0.3s;
+    box-shadow: 0 0 10px cyan;
 }
 
 .btn:hover {
-    background-color: darkblue;
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
 }
