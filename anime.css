@@ -19,20 +19,13 @@ h1 {
     padding: 20px;
 }
 
-/* Horizontal Scrollable Anime List */
-.anime-scroll {
-    display: flex;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap;
+/* Anime Grid (4 per row) */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+    gap: 20px; /* Space between items */
     padding: 10px;
-    width: 90%; /* Makes the scrollable area fit the screen */
-    max-width: 1000px;
-    scrollbar-width: none; /* Hides scrollbar for Firefox */
-}
-
-/* Hide scrollbar for Webkit browsers */
-.anime-scroll::-webkit-scrollbar {
-    display: none;
+    max-width: 800px;
 }
 
 /* Anime Box (Square, Small) */
@@ -44,12 +37,10 @@ h1 {
     width: 150px;
     height: 150px;
     transition: 0.3s;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 20px; /* Adds spacing between anime boxes */
-    flex-shrink: 0; /* Prevents shrinking in flexbox */
 }
 
 .anime-box:hover {
