@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <link rel="stylesheet" href="anime.css">
+</head>
+<body>
+    <div class="anime-container">
+        <h1>Anime Collection</h1>
+        <div class="anime-grid">
+            <!-- Anime Thumbnails -->
+            <div class="anime-box">
+                <img src="https://via.placeholder.com/150" alt="Attack on Titan">
+                <p>Attack on Titan</p>
+            </div>
+            <div class="anime-box">
+                <img src="https://via.placeholder.com/150" alt="Naruto">
+                <p>Naruto</p>
+            </div>
+            <div class="anime-box">
+                <img src="https://via.placeholder.com/150" alt="One Piece">
+                <p>One Piece</p>
+            </div>
+            <div class="anime-box">
+                <img src="https://via.placeholder.com/150" alt="Demon Slayer">
+                <p>Demon Slayer</p>
+            </div>
+            <div class="anime-box">
+                <img src="https://via.placeholder.com/150" alt="Jujutsu Kaisen">
+                <p>Jujutsu Kaisen</p>
+            </div>
+        </div>
+        <button id="backBtn" class="btn">Go Back</button>
+    </div>
+
+    <script>
+        // Redirect back to the main page when clicking "Go Back"
+        document.getElementById("backBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
